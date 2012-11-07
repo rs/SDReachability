@@ -20,6 +20,18 @@
  * THE SOFTWARE.
  */
 
+#ifdef __OBJC_GC__
+#error SDReachability does not support Objective-C Garbage Collection
+#endif
+
+#if !__has_feature(objc_arc)
+#error SDReachability is ARC only. Either turn on ARC for the project or use -fobjc-arc flag on this file
+#endif
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0
+#error SDReachability doesn't support Deployement Target version < 5.0
+#endif
+
 #import "SDReachability.h"
 #import <objc/message.h>
 
