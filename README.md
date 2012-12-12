@@ -16,7 +16,7 @@ SDReachability API is revisited in order to be simpler to use. You just have to 
 
 Check if Internet is reachable:
 
-    SDReachability reach = SDReachability.new;
+    SDReachability *reach = SDReachability.new;
     if (reach.isReachable)
     {
         NSLog(@"Connected with %@", reach.isReachableViaWWAN ? @"3G" : @"WiFi");
